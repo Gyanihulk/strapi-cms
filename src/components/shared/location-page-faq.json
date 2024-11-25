@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_location_page_faqs",
+  "info": {
+    "displayName": "Location Page FAQ"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "text": {
+      "type": "text"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-q-and-a"
+    }
+  }
+}

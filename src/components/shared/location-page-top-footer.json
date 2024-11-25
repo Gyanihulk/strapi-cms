@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_location_page_top_footers",
+  "info": {
+    "displayName": "Location Page Top footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "jsxSnippet": {
+      "type": "customField",
+      "options": {
+        "preset": "default"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "jsxDetails": {
+      "type": "customField",
+      "options": {
+        "preset": "default"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "metaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.meta-data"
+    }
+  }
+}

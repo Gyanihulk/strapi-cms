@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "location_page_datas",
+  "info": {
+    "singularName": "location-page-data",
+    "pluralName": "location-page-datas",
+    "displayName": "location Page Data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cityId": {
+      "type": "string"
+    },
+    "pathname": {
+      "type": "string"
+    },
+    "cityName": {
+      "type": "string"
+    },
+    "top_banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.top-banner"
+    },
+    "service": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location-page-service"
+    },
+    "mission": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location-page-mission"
+    },
+    "renting_fleet": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location-page-renting-fleet"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location-page-faq"
+    },
+    "blogs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location-page-blogs"
+    },
+    "top_footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.location-page-top-footer"
+    }
+  }
+}

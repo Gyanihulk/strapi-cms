@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_location_page_blogs",
+  "info": {
+    "displayName": "Location Page Blogs"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "banners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.banner"
+    }
+  }
+}

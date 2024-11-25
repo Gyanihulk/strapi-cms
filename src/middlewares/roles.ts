@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-
+import { freedoTitanAuthorise } from "../utils/freedoTitanApiCalls";
 const rolesMiddleware = (config: any, { strapi }: { strapi: any }) => {
     return async (ctx: any, next: () => Promise<void>) => {
         if (ctx.request.url === '/admin/users/me/permissions' && ctx.request.method === 'GET') {
@@ -59,17 +59,23 @@ const rolesMiddleware = (config: any, { strapi }: { strapi: any }) => {
                         }
                     }
 
-                    //  adminPermissions = adminPermissions.filter(
+
+                    // Freedo Titan shield
+                    // console.log(ctx.session.tokens);
+                    const freedoPermissions=await freedoTitanAuthorise(ctx.session.tokens.accessToken)
+                    // FIlter User Requests  
+                    
+                    // adminPermissions = adminPermissions.filter(
                     //     item => typeof item.subject !== 'string' || !item.subject.includes('terms-and-condition')
                     //   );
-                      
-                    // Attach the permissions into custom context state
+                      adminPermissions.map((adminPermission)=>{console.log(adminPermission.action)})
+                      console.log(("--------------"))
+                      adminPermissions.map((adminPermission)=>{console.log(adminPermission.subject)})
                     ctx.state.customPermissions = adminPermissions;
-
                     // Debug output
                     // console.log("[INFO] Admin User permissions: ", adminPermissions);
                     // Customise Mock API Response and Return the permissions as a response with status code 201
-                    ctx.status = 200;
+                    // ctx.status = 200;
                     ctx.body = {
                         data: adminPermissions,
                     };
@@ -87,5 +93,7 @@ const rolesMiddleware = (config: any, { strapi }: { strapi: any }) => {
         await next();
     };
 };
+
+
 
 export default rolesMiddleware;

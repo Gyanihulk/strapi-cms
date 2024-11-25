@@ -534,6 +534,51 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLocationPageDataLocationPageData
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'location_page_datas';
+  info: {
+    description: '';
+    displayName: 'location Page Data';
+    pluralName: 'location-page-datas';
+    singularName: 'location-page-data';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogs: Schema.Attribute.Component<'shared.location-page-blogs', false>;
+    cityId: Schema.Attribute.String;
+    cityName: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Component<'shared.location-page-faq', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-page-data.location-page-data'
+    > &
+      Schema.Attribute.Private;
+    mission: Schema.Attribute.Component<'shared.location-page-mission', false>;
+    pathname: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    renting_fleet: Schema.Attribute.Component<
+      'shared.location-page-renting-fleet',
+      false
+    >;
+    service: Schema.Attribute.Component<'shared.location-page-service', false>;
+    top_banner: Schema.Attribute.Component<'shared.top-banner', false>;
+    top_footer: Schema.Attribute.Component<
+      'shared.location-page-top-footer',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTermsAndConditionTermsAndCondition
   extends Struct.CollectionTypeSchema {
   collectionName: 'terms_and_conditions';
@@ -1092,6 +1137,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::location-page-data.location-page-data': ApiLocationPageDataLocationPageData;
       'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

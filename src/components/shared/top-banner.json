@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_top_banners",
+  "info": {
+    "displayName": "locationPageTopBanner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subHeading": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "backgroungImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

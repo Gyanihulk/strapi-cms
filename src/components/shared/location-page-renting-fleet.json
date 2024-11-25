@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_location_page_renting_fleets",
+  "info": {
+    "displayName": "Location Page Renting Fleet"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    }
+  }
+}
